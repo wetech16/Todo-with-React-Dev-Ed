@@ -9,12 +9,13 @@ function Form({inputText, setInputText, todos, setTodos}) {
       setTodos([
           ...todos, 
           {text: inputText, completed: false, id: Math.random()*1000 }
-      ])
+      ]);
+      setInputText("");
   }
   return (
     <div>
       <form>
-        <input onChange={inputTextHandler} type="text" className="todo-input" />
+        <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
         <button onClick={submitTodoHandler} className="todo-button" type="submit">
           <i className="fas fa-plus-square"></i>
         </button>
